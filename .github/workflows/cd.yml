@@ -1,3 +1,11 @@
+# TODO: 
+# trigger ke main
+# gate jalan kalau CI lolos
+# checkout, setup node, npm ci
+# install vercel cli. then vercel pull, vercel build, vercel deploy
+# secrets di github: vercel token, org id, project id
+# env variable NEXT_PUBLIC_API_URL di set ke dashboard vercel
+
 name: bankflow-web CD
 
 on:

@@ -1,3 +1,10 @@
+# TODO: 
+# 1. checkout, setup node dengan cache npm
+# 2. npm run lint dan type check
+# 3. test (vitest, lalu playwright jika ada)
+# 4. build (sudah ada)
+# 5. lighthouse ci (opsional, setelah ui jadi)
+
 name: bankflow-web CI
 
 on:

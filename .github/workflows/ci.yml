@@ -1,10 +1,3 @@
-# TODO: 
-# 1. checkout, setup node dengan cache npm
-# 2. npm run lint dan type check
-# 3. test (vitest, lalu playwright jika ada)
-# 4. build (sudah ada)
-# 5. lighthouse ci (opsional, setelah ui jadi)
-
 name: bankflow-web CI
 
 on:
@@ -17,12 +10,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-      - run: npm ci
-      - run: npm run build
-        env:
-          NEXT_PUBLIC_API_URL: http://localhost:8080
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+
+      - name: Run lint and type check
+        run: npm run lint && npm run type-check
+
+      - name: Run tests
+        run: npm test
+
+      - name: Run Lighthouse CI
+        run: npm run lhci

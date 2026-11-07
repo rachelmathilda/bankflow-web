@@ -1,3 +1,7 @@
+import SignupForm from "@/app/ui/signup-form";
+
 export default function RegisterPage() {
-  return <div>Register</div>;
+  return <main>
+    <SignupForm />
+  </main>;
 }

@@ -1,3 +1,7 @@
+import SigninForm from '@/app/ui/signin-form';
+
 export default function LoginPage() {
-  return <div>Login</div>;
+  return (<main>
+    <SigninForm />
+  </main>);
 }
